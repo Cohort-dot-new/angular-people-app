@@ -28,5 +28,7 @@
     $scope.toggleBioVisible = function(inputPerson) {
       inputPerson.bioVisible = !inputPerson.bioVisible;
     };
+
+    window.$scope = $scope;
   });
 })();
