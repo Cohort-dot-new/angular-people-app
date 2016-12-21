@@ -24,6 +24,9 @@
         bioVisible: false
       }
     ];
-    
+
+    $scope.toggleBioVisible = function(inputPerson) {
+      inputPerson.bioVisible = !inputPerson.bioVisible;
+    };
   });
 })();
