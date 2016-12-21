@@ -6,5 +6,13 @@
       <h2 ng-click="toggleBioVisible(person)">{{ person.name }}</h2>
       <p ng-if="person.bioVisible">{{ person.bio }}</p>
     </div>
+    <h4>Add person</h4>
+    <div>
+      <label>Name: </label>
+      <input ng-model="newPersonName">
+      <label>Bio: </label>
+      <input ng-model="newPersonBio">
+      <button ng-click="addPerson(newPersonName, newPersonBio)">Add Person</button>
+    </div>
   </div>
 </div>

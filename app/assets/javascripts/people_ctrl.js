@@ -29,6 +29,15 @@
       inputPerson.bioVisible = !inputPerson.bioVisible;
     };
 
+    $scope.addPerson = function(inputName, inputBio) {
+      var newPerson = {
+        name: inputName,
+        bio: inputBio,
+        bioVisible: false
+      };
+      $scope.people.push(newPerson);
+    };
+
     window.$scope = $scope;
   });
 })();
