@@ -5,6 +5,7 @@
     <div ng-repeat="person in people">
       <h2 ng-click="toggleBioVisible(person)">{{ person.name }}</h2>
       <p ng-if="person.bioVisible">{{ person.bio }}</p>
+      <a href="#" ng-click="deletePerson(person)">Delete</a>
     </div>
     <h4>Total number of people: {{ people.length }}</h4>
     <h4>Add person</h4>

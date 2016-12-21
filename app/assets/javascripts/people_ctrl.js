@@ -38,6 +38,13 @@
       $scope.people.push(newPerson);
     };
 
+    $scope.deletePerson = function(inputPerson) {
+      var index = $scope.people.indexOf(inputPerson);
+      if (index !== -1) {
+        $scope.people.splice(index, 1);
+      }
+    };
+
     window.$scope = $scope;
   });
 })();
