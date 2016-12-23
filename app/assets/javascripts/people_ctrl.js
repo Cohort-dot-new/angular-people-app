@@ -2,9 +2,11 @@
 
 (function() {
   angular.module("app").controller("peopleCtrl", function($scope, $http) {
-    $http.get('http://localhost:3000/api/v1/people').then(function(response) {
-      $scope.people = response.data;
-    });
+    $scope.setup = function() {
+      $http.get('http://localhost:3000/api/v1/people').then(function(response) {
+        $scope.people = response.data;
+      });
+    };
 
     $scope.toggleBioVisible = function(inputPerson) {
       inputPerson.bioVisible = !inputPerson.bioVisible;
