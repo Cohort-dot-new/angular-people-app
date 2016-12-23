@@ -9,6 +9,9 @@
     </div>
     <h4>Total number of people: {{ people.length }}</h4>
     <h4>Add person</h4>
+    <ul>
+      <li ng-repeat="error in errors">{{ error }}</li>
+    </ul>
     <div>
       <label>Name: </label>
       <input ng-model="newPersonName">
