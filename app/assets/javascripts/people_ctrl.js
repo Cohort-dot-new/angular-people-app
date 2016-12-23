@@ -13,12 +13,13 @@
     };
 
     $scope.addPerson = function(inputName, inputBio) {
-      var newPerson = {
+      var params = {
         name: inputName,
-        bio: inputBio,
-        bioVisible: false
+        bio: inputBio
       };
-      $scope.people.push(newPerson);
+      $http.post('/api/v1/people', params).then(function(response) {
+        $scope.people.push(response.data);
+      });
     };
 
     $scope.deletePerson = function(inputPerson) {
