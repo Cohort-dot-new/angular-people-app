@@ -31,6 +31,10 @@
       }
     };
 
+    $scope.changeOrderAttribute = function(inputAttribute) {
+      $scope.orderAttribute = inputAttribute;
+    };
+
     window.$scope = $scope;
   });
 })();
