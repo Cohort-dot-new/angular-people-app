@@ -5,6 +5,8 @@
     $scope.setup = function() {
       $http.get('/api/v1/people').then(function(response) {
         $scope.people = response.data;
+        $scope.orderAttribute = 'name';
+        $scope.isOrderDescending = false;
       });
     };
 
@@ -32,6 +34,11 @@
     };
 
     $scope.changeOrderAttribute = function(inputAttribute) {
+      if (inputAttribute === $scope.orderAttribute) {
+        $scope.isOrderDescending = !$scope.isOrderDescending;
+      } else {
+        $scope.isOrderDescending = false;
+      }
       $scope.orderAttribute = inputAttribute;
     };
 
