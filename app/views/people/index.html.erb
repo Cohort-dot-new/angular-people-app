@@ -2,7 +2,8 @@
 
 <div ng-app="app">
   <div ng-controller="peopleCtrl" ng-init="setup()">
-    <div ng-repeat="person in people">
+    Search: <input ng-model="nameFilter">
+    <div ng-repeat="person in people | filter: {name: nameFilter}">
       <h2 ng-click="toggleBioVisible(person)">{{ person.name }}</h2>
       <p ng-class="{strike: person.bioVisible}">{{ person.bio }}</p>
       <a href="#" ng-click="deletePerson(person)">Delete</a>
