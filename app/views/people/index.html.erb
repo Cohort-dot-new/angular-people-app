@@ -5,8 +5,8 @@
     Search: <input ng-model="nameFilter">
     <table border=1>
       <tr>
-        <th ng-click="changeOrderAttribute('name')">Name</th>
-        <th ng-click="changeOrderAttribute('bio')">Bio</th>
+        <th ng-click="changeOrderAttribute('name')">Name {{ getSortIcon('name') }}</th>
+        <th ng-click="changeOrderAttribute('bio')">Bio {{ getSortIcon('bio') }}</th>
       </tr>
       <tr ng-repeat="person in people | filter: {name: nameFilter} | orderBy:orderAttribute:isOrderDescending">
         <td>{{ person.name }}</td>

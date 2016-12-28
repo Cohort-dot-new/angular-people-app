@@ -42,6 +42,18 @@
       $scope.orderAttribute = inputAttribute;
     };
 
+    $scope.getSortIcon = function(inputAttribute) {
+      if (inputAttribute === $scope.orderAttribute) {
+        if ($scope.isOrderDescending) {
+          return 'v';
+        } else {
+          return '^';
+        }
+      } else {
+        return '';
+      }
+    };
+
     window.$scope = $scope;
   });
 })();
